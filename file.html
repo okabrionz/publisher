@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Storage</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!--- This example uses jQuery: -->
+  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+
+  <!-- Make sure to include Nelify's authentiation library -->
+  <script src="https://app.netlify.com/authentication.js"></script>
+
+  <script>
+    $(function() {
+      $("#login").on("click", function(e) {
+        e.preventDefault();
+        netlify.authenticate({provider:"github", scope: "user"}, function(err, data) {
+          if (err) {
+            return $("#output").text("Error Authenticating with GitHub: " + err);
+          }
+          $("#output").text("Authenticated with GitHub. Access Token: " + data.token);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+  <div class="container" id="content" tabindex="-1">
+    <!-- The main page content -->
+  </div>
+  <nav class="navbar navbar-dark bg-faded">
+  <a class="navbar-brand text-center tex" href="https://www.publisher.co.id/">Publisher Files</a>
+  </nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h1 class="display-5">
+      Image CDN Stored on <a href="https://dev.filestack.com/apps/AgGPZ28ZlQdKQIjRMVQimz/console" target="_blank"><strong class="text-danger">FileStack.io</strong></a>
+    </h1><hr>
+    <p class="lead">
+      <input class="btn btn-outline-primary" type="filepicker" data-fp-apikey="AgGPZ28ZlQdKQIjRMVQimz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-multiple="true" data-fp-maxsize="5000000" data-fp-conversions="crop,rotate,filter" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)"> <strong class="text-primary">Result:</strong> <a href='#' id='target' target="_blank"></a>
+    </p><hr>
+    
+  </div>
+</div>
+<div class="text-center">
+    <h1>GitHub Auth:</h1>
+  <p><a href="#" id="login">Authenticate</a></p>
+  <p id="output"></p>
+</div>
+
+  <div class="container-fluid text-center">
+  <img src="https://cdn.filestackcontent.com/FUBo4imjRqKcL0X8E6BE" class="rounded mx-auto d-block" alt="Future World - Home Decoration Ideas" title="Future World" height="480px">
+  </div>  
+
+  <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
