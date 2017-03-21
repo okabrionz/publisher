@@ -4,21 +4,7 @@
   <title>File Storage</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script>
-  	  filepicker.setKey("AOSLAoEN9RPSqlUCWpQ3dz");
-	filepicker.pick(
-  {
-    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX', 'URL']
-  },
-  function(Blob){
-    console.log(JSON.stringify(Blob));
-    document.getElementById('target').href=Blob.url
-    document.getElementById('target').innerHTML=Blob.url
-  },
-  function(FPError){
-    console.log(FPError.toString());
-  });
-  </script>
+  
 
 </head>
 <body>
@@ -41,7 +27,21 @@
   </div>
 </div>
 
-
+<script>
+  	  filepicker.setKey("AOSLAoEN9RPSqlUCWpQ3dz");
+	filepicker.pick(
+  {
+    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX', 'URL']
+  },
+  function(Blob){
+    console.log(JSON.stringify(Blob));
+    document.getElementById('target').href=Blob.url
+    document.getElementById('target').innerHTML=Blob.url
+  },
+  function(FPError){
+    console.log(FPError.toString());
+  });
+  </script>
 
   <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
