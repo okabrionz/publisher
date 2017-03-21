@@ -1,7 +1,7 @@
   filepicker.setKey("AOSLAoEN9RPSqlUCWpQ3dz");
 	filepicker.pick(
   {
-    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX']
+    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX', 'URL']
   },
   function(Blob){
     console.log(JSON.stringify(Blob));
@@ -11,4 +11,3 @@
   function(FPError){
     console.log(FPError.toString());
   });
-  
