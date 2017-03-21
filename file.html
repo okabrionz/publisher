@@ -4,25 +4,8 @@
   <title>File Storage</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <!--- This example uses jQuery: -->
-  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 
-  <!-- Make sure to include Nelify's authentiation library -->
-  <script src="https://app.netlify.com/authentication.js"></script>
 
-  <script>
-    $(function() {
-      $("#login").on("click", function(e) {
-        e.preventDefault();
-        netlify.authenticate({provider:"github", scope: "user"}, function(err, data) {
-          if (err) {
-            return $("#output").text("Error Authenticating with GitHub: " + err);
-          }
-          $("#output").text("Authenticated with GitHub. Access Token: " + data.token);
-        });
-      });
-    });
-  </script>
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -42,11 +25,6 @@
     </p><hr>
     
   </div>
-</div>
-<div class="text-center">
-    <h1>GitHub Auth:</h1>
-  <p><a href="#" id="login">Authenticate</a></p>
-  <p id="output"></p>
 </div>
 
   <div class="container-fluid text-center">
