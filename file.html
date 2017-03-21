@@ -21,7 +21,7 @@
       Image CDN Stored on <a href="https://dev.filestack.com/apps/AgGPZ28ZlQdKQIjRMVQimz/console" target="_blank"><strong class="text-danger">FileStack.io</strong></a>
     </h1><hr>
     <p class="lead">
-      <input class="btn btn-outline-primary" type="filepicker" data-fp-apikey="AgGPZ28ZlQdKQIjRMVQimz" data-fp-mimetypes="*/*" data-fp-container="modal" data-fp-multiple="true" data-fp-maxsize="5000000" data-fp-conversions="crop,rotate,filter" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)"> <strong class="text-primary">Result:</strong> <a href='#' id='target' target="_blank"></a>
+      <strong class="text-primary">Result:</strong> <a href='#' id='target' target="_blank"></a>
     </p><hr>
     
   </div>
@@ -30,6 +30,21 @@
   <div class="container-fluid text-center">
   <img src="https://cdn.filestackcontent.com/FUBo4imjRqKcL0X8E6BE" class="rounded mx-auto d-block" alt="Future World - Home Decoration Ideas" title="Future World" height="480px">
   </div>  
+  <script>
+  	  filepicker.setKey("AOSLAoEN9RPSqlUCWpQ3dz");
+	filepicker.pick(
+  {
+    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX', 'URL']
+  },
+  function(Blob){
+    console.log(JSON.stringify(Blob));
+    document.getElementById('target').href=Blob.url
+    document.getElementById('target').innerHTML=Blob.url
+  },
+  function(FPError){
+    console.log(FPError.toString());
+  });
+  </script>
 
   <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
