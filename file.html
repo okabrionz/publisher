@@ -27,24 +27,9 @@
   </div>
 </div>
 
-<script>
-  	  filepicker.setKey("AOSLAoEN9RPSqlUCWpQ3dz");
-	filepicker.pick(
-  {
-    services: ['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'GOOGLE_DRIVE', 'DROPBOX', 'URL']
-  },
-  function(Blob){
-    console.log(JSON.stringify(Blob));
-    document.getElementById('target').href=Blob.url
-    document.getElementById('target').innerHTML=Blob.url
-  },
-  function(FPError){
-    console.log(FPError.toString());
-  });
-  </script>
-
-  <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="js/filepicker.js"></script>	
+  	<script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
+  	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-					A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
